@@ -17,14 +17,15 @@
 
 
 
-          <div *ngFor="let city of cities" class="activity-row" (click)="selectCity(city)">
+          <div *ngFor="let city of cities; let i = index; let isEven = even"
+               class="activity-row" (click)="selectCity(city)" [ngClass]="{'even_line': isEven}">
             <div class="activity-desc">
-              <h5>{{city.name}}</h5>
+              <h5>{{i+1}}. {{city.name}}</h5>
             </div>
             <div class="activity-img">
               <ul>
-                <li><img src='{{city.photo}}'  alt=""/></li>
-                <li><img src='{{city.hotelPhoto}}'  alt=""/></li>
+                <li><img [ngClass]="{cityPhoto: true}" src='{{city.photo}}'  alt=""/></li>
+                <li><img [ngClass]="{hotelPhoto: true}"src='{{city.hotelPhoto}}'  alt=""/></li>
               </ul>
             </div>
             <div class="clear"> </div>
