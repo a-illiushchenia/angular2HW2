@@ -14,47 +14,17 @@
       <span class="line"> </span>
       <div class="activity_box">
         <div class="scrollbar" id="style-2">
-          <div class="activity-row" (click)="selectCity(cities[0])">
+
+
+
+          <div *ngFor="let city of cities" class="activity-row" (click)="selectCity(city)">
             <div class="activity-desc">
-              <h5>{{cities[0].name}}</h5>
-              <!--<p>Sed perspiciatis</p>-->
-              <!--<p>Et harum quidem</p>-->
-              <!--<h6>Tel:+1285 968 685</h6>-->
+              <h5>{{city.name}}</h5>
             </div>
             <div class="activity-img">
               <ul>
-                <li><img src='{{cities[0].photo}}'  alt=""/></li>
-                <li><img src='{{cities[0].hotelPhoto}}'  alt=""/></li>
-              </ul>
-            </div>
-            <div class="clear"> </div>
-          </div>
-          <div class="activity-row" (click)="selectCity(cities[1])">
-            <div class="activity-desc">
-              <h5>{{cities[1].name}}</h5>
-              <!--<p>Sed ut perspiciatis</p>-->
-              <!--<p>Et harum quidem</p>-->
-              <!--<h6>Tel:+1285 968 685</h6>-->
-            </div>
-            <div class="activity-img">
-              <ul>
-                <li><img [src]='cities[1].photo'  alt=""/></li>
-                <li><img [src]='cities[1].hotelPhoto'  alt=""/></li>
-              </ul>
-            </div>
-            <div class="clear"> </div>
-          </div>
-          <div class="activity-row" (click)="selectCity(cities[2])">
-            <div class="activity-desc">
-              <h5>{{cities[2].name}}</h5>
-              <!--<p>Sed ut perspiciatis</p>-->
-              <!--<p>Et harum quidem</p>-->
-              <!--<h6>Tel:+1285 968 685</h6>-->
-            </div>
-            <div class="activity-img">
-              <ul>
-                <li><img [src]='cities[2].photo'  alt=""/></li>
-                <li><img [src]='cities[2].hotelPhoto' alt=""/></li>
+                <li><img src='{{city.photo}}'  alt=""/></li>
+                <li><img src='{{city.hotelPhoto}}'  alt=""/></li>
               </ul>
             </div>
             <div class="clear"> </div>
