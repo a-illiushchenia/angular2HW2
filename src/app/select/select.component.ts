@@ -7,6 +7,7 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class SelectComponent implements OnInit {
   public cities: hw1.City[];
+  public isCIS: boolean = null;
 
   @Output()
   public clickOnCity: EventEmitter<hw1.City> = new EventEmitter<hw1.City> ();
@@ -20,7 +21,8 @@ export class SelectComponent implements OnInit {
         hotel: "Europe",
         hotelPhoto: "assets/minsk-hotel-europe.jpg",
         followers: 25,
-        following: 2
+        following: 2,
+        isCIS: true
       },
       {
         name: "Москва",
@@ -29,7 +31,8 @@ export class SelectComponent implements OnInit {
         hotel: "Космос",
         hotelPhoto: "assets/moskva-hotel-cosmos.jpg",
         followers: 5000,
-        following: 1000
+        following: 1000,
+        isCIS: true
       },
       {
         name: "Киев",
@@ -38,7 +41,8 @@ export class SelectComponent implements OnInit {
         hotel: "Premier",
         hotelPhoto: "assets/kiev-hotel-premier.jpg",
         followers: 2300,
-        following: 480
+        following: 480,
+        isCIS: true
       },
       {
         name: "Вильнюс",
@@ -47,7 +51,8 @@ export class SelectComponent implements OnInit {
         hotel: "Novotel",
         hotelPhoto: "assets/vilnius-hotel-novotel.jpg",
         followers: 2400,
-        following: 500
+        following: 500,
+        isCIS: false
       },
       {
         name: "Рига",
@@ -56,7 +61,8 @@ export class SelectComponent implements OnInit {
         hotel: "Mercure",
         hotelPhoto: "assets/riga-hotel-mercure.jpg",
         followers: 1800,
-        following: 270
+        following: 270,
+        isCIS: false
       },
       {
         name: "Таллин",
@@ -65,7 +71,8 @@ export class SelectComponent implements OnInit {
         hotel: "Meriton",
         hotelPhoto: "assets/tallinn-hotel-meriton.jpg",
         followers: 2100,
-        following: 330
+        following: 330,
+        isCIS: false
       }
     ];
   }
@@ -76,6 +83,10 @@ export class SelectComponent implements OnInit {
 
   public selectCity(city: hw1.City){
     this.clickOnCity.next(city);
+  }
+
+  public setCIS(isCIS: boolean){
+    this.isCIS = isCIS;
   }
 
 }

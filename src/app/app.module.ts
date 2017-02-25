@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { TemperatureComponent } from './temperature/temperature.component';
 import { DescriptionComponent } from './description/description.component';
 import { SelectComponent } from './select/select.component';
+import { CityFilterPipe } from './city-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TemperatureComponent,
     DescriptionComponent,
-    SelectComponent
+    SelectComponent,
+    CityFilterPipe
   ],
   imports: [
     BrowserModule,

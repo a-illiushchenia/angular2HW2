@@ -8,5 +8,6 @@ declare namespace hw1{
     hotelPhoto: string;
     followers: number;
     following: number;
+    isCIS: boolean;
   }
 }
